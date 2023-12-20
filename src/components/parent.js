@@ -8,29 +8,39 @@ class Parent extends React.Component {
         {
             etat: "Montage"
         };
-        console.log("Etape 1 Parent: La methode constructor");       
+        console.log(`Parent: La methode constructor💚`,this.state);       
 
     }
 
     static getDerivedStateFromProps(props, state){
-        console.log("Etape 2 Parent: La methode getDerivedStateFromProps", state);
+        console.log("Parent : La methode getDerivedStateFromProps💚", state);
         return state
     }
 
+    backAgain(){
+        // alert("je reviens sur le parent")
+        console.log("je reviens sur le parent💚")
+    }
+
     render(){
-        console.log("Etape 3 Parent: La methode Render");
+        console.log("Parent: La methode Render💚",this.state);
         return(
             <>
                 <Enfant/>
+                <button onClick={this.backAgain}>Revenir</button>
             </>
         )
     }
 
-    // componentDidMount(){
+    componentDidMount(){
         
-    //     console.log("Etape 4 Parent: La methode componentDidMount", this.state);
-    //     this.setState({etat: 'Changement de l\'etat'});
-    // }
+        console.log("Parent: La methode componentDidMount", this.state);
+        this.setState({etat: 'Changement de l\'etat'});
+    }
+
+    componentWillUnmount(){
+        console.log("Parent 5 Parent: La methode componentWillUnmount💚  ", this.state);
+    }
 
    
 }

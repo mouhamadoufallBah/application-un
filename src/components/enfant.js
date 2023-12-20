@@ -7,51 +7,49 @@ class Enfant extends React.Component {
         {
             etat: "MontageEnfant"
         };
-        console.log("Etape 1 Enfant: La methode constructor");
+        console.log("Etape 1 Enfant: La methode constructor💛");
 
     }
 
     static getDerivedStateFromProps(props, state) {
-        console.log("Etape 2 Enfant: La methode getDerivedStateFromProps", state);
+        console.log("Etape 2 Enfant: La methode getDerivedStateFromProps💛", state);
         return state
     }
-    
-    getSnapshotBeforeUpdate(prevProps, prevState){
-        console.log("Etape 4 Enfant: La methode getSnapshotBeforeUpdate", prevState);
+
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log("Etape 4 Enfant: La methode getSnapshotBeforeUpdate💛", prevState);
         return prevState
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot){
-        console.log("Etape 5 Enfant: La methode getSnapshotBeforeUpdate", prevState);
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("Etape 5 Enfant: La methode getSnapshotBeforeUpdate💛", prevState);
         return prevState
     }
+
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log("Etape 3 Enfant: La methode shouldComponentUpdate", nextState);
+        console.log("Etape 3 Enfant: La methode shouldComponentUpdate💛", nextState);
         return nextState
     }
 
-
-
     render() {
-        console.log("Etape 4 Parent: La methode Render");
+        console.log("Etape 4 Parent: La methode Render💛");
         return (
             <>
                 <h1>Enfant</h1>
-            </>
-        )
+            </>         
+        );       
     }
 
-    componentDidMount(){
-
-        console.log("Etape X Parent: La methode componentDidMount", this.state);
-        this.setState({etat: 'Changement de l\'etat'});
+    componentDidMount() {
+        console.log("Etape X Enfant: La methode componentDidMount💛", this.state);
+        this.setState({ etat: 'Changement de l\'etat enfant' });
     }
 
-
-
-
-
+    componentWillUnmount() {
+        console.log("Etape X Enfant: La methode de demontage enfant componentWillUnmount💛 Demontage enfant");
+    }
 
 }
 
